@@ -7,5 +7,4 @@ const ToggleButton = ({setOpen}) => {
     )
 
 };
-
 export default ToggleButton;
