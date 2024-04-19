@@ -28,7 +28,6 @@ const Links = () => {
 
 const items = [
     "HomePage",
-    "Services",
     "Portfolio",
     "Contact",
     "About"
