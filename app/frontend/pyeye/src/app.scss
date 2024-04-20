@@ -24,3 +24,22 @@ section{
     height: 100vh;
     scroll-snap-align: center;
 }
+
+#Contact {
+    font-family: Arial, sans-serif;
+
+
+    h2 {
+      font-size: 50px;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      font-size: 16px;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+  }
