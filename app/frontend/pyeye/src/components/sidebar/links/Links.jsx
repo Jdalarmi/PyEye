@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const variants = {
     open:{
@@ -26,12 +27,12 @@ const itemVariants = {
 
 const Links = () => {
 
-const items = [
-    "HomePage",
-    "Portfolio",
-    "Contact",
-    "About"
-]
+    const items = [
+        "GitHub",
+        "Linkedin",
+        "Pendencias Pro",
+        "Sobre"
+    ]
     return <motion.div className="links" variants={variants}>
         {items.map(item=>(
         <motion.a href={`#${item}`} key={item} variants={itemVariants} whileHover={{scale: 1.1}} whileTap={{scale:0.5}}>

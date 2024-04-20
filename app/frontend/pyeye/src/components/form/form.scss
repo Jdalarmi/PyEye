@@ -21,12 +21,12 @@
 
   .formulario-card {
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 8px rgb(47, 206, 218);
     overflow: hidden;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.8s ease;
 
     &:hover {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 16px rgba(180, 32, 209, 0.438);
     }
 
     .form {
@@ -41,27 +41,28 @@
       input,
       select {
         width: calc(100% - 16px);
-        padding: 8px;
-        margin-top: 5px;
-        margin-bottom: 15px;
+        padding: 12px;
+        margin-top: 7px;
+        margin-bottom: 17px;
         border: 1px solid #ccc;
-        border-radius: 4px;
+        border-radius: 5px;
         box-sizing: border-box;
         font-size: 16px;
       }
 
       button {
+        font-size: 20px;
         width: calc(100% - 16px);
         padding: 10px;
-        background-color: #007bff;
+        background-color: #16aacf;
         color: #fff;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: background-color 1s ease;
 
         &:hover {
-          background-color: #0056b3;
+          background-color: #b426df;
         }
       }
     }

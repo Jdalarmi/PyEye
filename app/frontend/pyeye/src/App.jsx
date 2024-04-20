@@ -12,6 +12,8 @@ const App = () => {
       </section>
       <section id="Portfolio"><Form/></section>
       <section id="Contact">
+        <br />
+        <br />
         <h2>Obrigado pela sua resposta!</h2>
         <p>Sua informações seram processadas pelo sistema e contribuiram para geração de analíses.</p>
       </section>
