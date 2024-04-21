@@ -6,9 +6,9 @@ class Pedidos(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     user_name = Column(String)
-    time_exposed = Column(Float)
-    rest_time = Column(String)
-    shine_screen = Column(String)
+    time_exposed = Column(Integer)
+    rest_time = Column(Integer)
+    shine_screen = Column(Integer)
     distance_screen = Column(Integer)
 
 

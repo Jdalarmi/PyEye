@@ -3,6 +3,7 @@ import "./form.scss"
 
 const Form = () => {
   const [dadosUsuario, setDadosUsuario] = useState({
+    user_name: "",
     tempo_exposicao: 0,
     intervalos_descanso: 0,
     brilho_tela: 0,
@@ -22,9 +23,15 @@ const Form = () => {
     fetch("http://127.0.0.1:8080/v1/received/pyeye", {
       method: 'POST',
       headers:{
-        'Content-Type': 'aplication/json'
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(dadosUsuario),
+      body: JSON.stringify({
+        user_name: dadosUsuario.user_name,
+        time_exposed: parseInt(dadosUsuario.tempo_exposicao),
+        rest_time: parseInt(dadosUsuario.intervalos_descanso),
+        shine_screen: parseInt(dadosUsuario.brilho_tela),
+        distance_screen: parseInt(dadosUsuario.distancia_visualizacao)
+      }),
     })
     .then(response => response.json())
     .then(data => console.log(data))
@@ -36,15 +43,22 @@ const Form = () => {
   return (
     <div className='formulario-container'>
       <div className='formulario-intro'>
-        <br />
-        <br />
         <h2>Bem-vindo ao Formulário de Saúde Ocular</h2>
         <hr />
         <br />
-        <p>Preencha o formulário abaixo com suas informações relacionadas à saúde ocular.</p>
+        <p>Preencha o formulário abaixo com suas informações relacionadas aos seus habitos em frente a tela</p>
       </div>
       <div className='formulario-card'>
         <form className="form" onSubmit={handleSubmit}>
+          <label>
+            Seu nome:
+            <input
+              type="text"
+              name="user_name"
+              value={dadosUsuario.user_name}
+              onChange={handleChange}
+            />
+          </label>
           <label>
             Tempo de Exposição (horas por dia na tela):
             <input
@@ -57,7 +71,7 @@ const Form = () => {
           <label>
             Intervalos de Descanso (proporção):
             <input
-              type="number"
+              type="text"
               name="intervalos_descanso"
               value={dadosUsuario.intervalos_descanso}
               onChange={handleChange}
