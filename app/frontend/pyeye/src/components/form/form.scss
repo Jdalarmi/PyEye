@@ -64,6 +64,10 @@
         &:hover {
           background-color: #b426df;
         }
+        &:disabled {
+          background-color: #16aacf;
+          pointer-events: none;
+        }
       }
     }
   }

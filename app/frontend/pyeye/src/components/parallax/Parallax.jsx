@@ -27,7 +27,8 @@ const Parallax = ({type}) => {
 
             <motion.h1>
                 {type==='services' ? "What We Do?" : "Py Eye"}
-                <p>Projeto open source que monitora sua saúde visual</p>
+                <p>Um projeto open source que monitora e preserva sua saúde visual.</p>
+                    <p>enquanto coleta dados para análises futuras.</p>
             </motion.h1>
             <motion.div className="mountains"></motion.div>
             <motion.div style={{y:yBg}} className="planets"></motion.div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./form.scss"
 
-const Form = () => {
+const Form = ({handleApiResponse}) => {
   const [dadosUsuario, setDadosUsuario] = useState({
     user_name: "",
     tempo_exposicao: 0,
@@ -9,6 +9,9 @@ const Form = () => {
     brilho_tela: 0,
     distancia_visualizacao: 0,
   });
+
+
+  const [botaoDesabilitado, setBotaoDesabilitado] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,9 +21,10 @@ const Form = () => {
     });
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://127.0.0.1:8080/v1/received/pyeye", {
+    fetch("http://127.0.0.1:8000/v1/received/pyeye", {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
@@ -33,7 +37,13 @@ const Form = () => {
         distance_screen: parseInt(dadosUsuario.distancia_visualizacao)
       }),
     })
-    .then(response => response.json())
+    .then(response => {
+      handleApiResponse(response);
+      if (response.status == 200){
+        setBotaoDesabilitado(true)
+      }
+      return response.json();
+    })
     .then(data => console.log(data))
     .catch((error) =>{
       console.error("Erro ao enviar dados:", error);
@@ -46,7 +56,7 @@ const Form = () => {
         <h2>Bem-vindo ao Formulário de Saúde Ocular</h2>
         <hr />
         <br />
-        <p>Preencha o formulário abaixo com suas informações relacionadas aos seus habitos em frente a tela</p>
+        <p>Preencha o formulário abaixo com suas informações para obter seu "Score".</p>
       </div>
       <div className='formulario-card'>
         <form className="form" onSubmit={handleSubmit}>
@@ -60,7 +70,7 @@ const Form = () => {
             />
           </label>
           <label>
-            Tempo de Exposição (horas por dia na tela):
+            Tempo de Exposição (Horas por dia em frente a tela):
             <input
               type="number"
               name="tempo_exposicao"
@@ -69,7 +79,7 @@ const Form = () => {
             />
           </label>
           <label>
-            Intervalos de Descanso (proporção):
+            Intervalos de Descanso (Quantas pausas a cada 1 hora):
             <input
               type="text"
               name="intervalos_descanso"
@@ -95,7 +105,7 @@ const Form = () => {
               onChange={handleChange}
             />
           </label>
-          <button type="submit">Enviar</button>
+          <button type="submit" disabled={botaoDesabilitado}>Enviar</button>
         </form>
       </div>
     </div>

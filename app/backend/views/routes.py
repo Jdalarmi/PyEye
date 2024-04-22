@@ -3,8 +3,6 @@ from fastapi import APIRouter
 from pydantic import BaseModel, Field
 from database.connection import SessionLocal
 from fastapi.responses import JSONResponse
-from fastapi import status
-
 
 class Pyeye(BaseModel):
     user_name: str = Field(max_length=15)
@@ -29,6 +27,9 @@ def get_db():
 
 @router.post("/received/pyeye")
 async def received(pyeye: Pyeye):
-    if pyeye.time_exposed > 50:
-        print(pyeye.time_exposed)
+    if pyeye.user_name == "":
+        return JSONResponse(status_code=400, content={"Erro": "Campo nome vazio"})
+    number = any(char.isdigit() for char in pyeye.user_name)
+    if number:
+        return JSONResponse(status_code=400, content={"Erro": "Nome contém numeros"})
     return JSONResponse(content={"Dados":"OK"})
