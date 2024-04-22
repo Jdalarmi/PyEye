@@ -12,6 +12,7 @@ const Form = ({handleApiResponse}) => {
 
 
   const [botaoDesabilitado, setBotaoDesabilitado] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,6 +47,7 @@ const Form = ({handleApiResponse}) => {
     })
     .then(data => console.log(data))
     .catch((error) =>{
+      setErrorMessage("Erro ao enviar os dados:" + error.message)
       console.error("Erro ao enviar dados:", error);
     });
   };

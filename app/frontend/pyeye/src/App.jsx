@@ -47,7 +47,7 @@ const App = () => {
                 <p>Relacionado a comportamentos referente ao uso de telas que tendem causar impacto direto na visão.</p>
                 <br />
                 <br />
-                <h2>Confira abaixo seu Score e detalhes sobre sua pontuação:</h2>
+                <h2>Confira abaixo seu "Score" e detalhes sobre sua pontuação:</h2>
             </section>
         </div>
     );
