@@ -1,8 +1,8 @@
 from database.connection import engine, Base
 from sqlalchemy import Column, String, Integer, Float
 
-class Pedidos(Base):
-    __tablename__ = "pedidos"
+class Analytics(Base):
+    __tablename__ = "analytics"
 
     id = Column(Integer, primary_key=True, index=True)
     user_name = Column(String)
