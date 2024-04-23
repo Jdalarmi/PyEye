@@ -10,6 +10,7 @@ class Analytics(Base):
     rest_time = Column(Integer)
     shine_screen = Column(Integer)
     distance_screen = Column(Integer)
+    score = Column(Integer)
 
 
 def create_tables():

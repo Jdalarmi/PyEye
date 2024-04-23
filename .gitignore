@@ -5,6 +5,7 @@ __pycache__/
 teste.py
 # C extensions
 *.so
+dados.db
 
 # Distribution / packaging
 .Python

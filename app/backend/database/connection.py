@@ -11,7 +11,9 @@ password=os.getenv("PASSWORD")
 host=os.getenv("HOST")
 db=os.getenv("DB")
 
-SQLALCHEMY_DATABASE_URL = f'postgresql://{user}:{password}@{host}/{db}'
+# SQLALCHEMY_DATABASE_URL = f'postgresql://{user}:{password}@{host}/{db}'
+
+SQLALCHEMY_DATABASE_URL = 'sqlite:///dados.db'
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 

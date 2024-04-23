@@ -15,6 +15,6 @@ app.add_middleware(
 )
 
 
-# create_tables()
+create_tables()
 
 app.include_router(routes.router)
