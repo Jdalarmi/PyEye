@@ -48,6 +48,20 @@ const App = () => {
                 <br />
                 <br />
                 <h2>Confira abaixo seu "Score" e detalhes sobre sua pontuação:</h2>
+                <div id="result-card">
+                <div class="card-content">
+                    <div class="value">Seu Score:</div>
+                    <hr />
+                    <h2>
+                        90
+                    </h2>
+                    <div class="details">Detalhes sobre seu Score:</div>
+                    <hr />
+                    <p>
+                        Seu uso está alto o que pode resultar em problemas na sua saúde visual
+                    </p>
+                </div>
+            </div>
             </section>
         </div>
     );

@@ -44,4 +44,4 @@ async def received(pyeye: Pyeye, db: Session = Depends(get_db)):
     )
     db.add(analytics)
     db.commit()
-    return JSONResponse(status_code=201, content={"Dados":"OK"})
+    return JSONResponse(status_code=200, content={"Dados":"OK"})
