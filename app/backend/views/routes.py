@@ -58,7 +58,7 @@ async def received(pyeye: Pyeye, db: Session = Depends(get_db)):
                                                       "Isso pode resumir em melhorar alguns habitos como: "
                                                       "Diminuir brilho ou aumentar a sua distancia da tela."})
     if score > 70:
-        return JSONResponse(status_code=200, content={"Score":score, "Description":"Atenção para seu score elevado"
+        return JSONResponse(status_code=200, content={"Score":score, "Description":"Atenção para seu score elevado. "
                                                       "Isso pode resumir em danos a sua saúde visual. "
                                                       "Pode ser necessario mudar alguns habitos!"})
     print(score)

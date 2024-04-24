@@ -6,7 +6,7 @@ teste.py
 # C extensions
 *.so
 dados.db
-
+zcurrent
 # Distribution / packaging
 .Python
 build/
