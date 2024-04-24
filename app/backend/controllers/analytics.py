@@ -23,7 +23,7 @@ def calculate_distance(distance_screen):
     return np.clip((1 - distance_screen / 50) * 100, 0, 100)
 
 
-def impact_on_vision(user_name, time_exposed,
+def impact_on_vision(time_exposed,
                      rest_time, shine_screen,
                      distance_screen):
     points_time_exposed = calculate_time_expose(time_exposed)
@@ -40,11 +40,4 @@ def impact_on_vision(user_name, time_exposed,
     return rating_score
 
 
-name = "Jeferson"
-time = 6
-rest_time = 2
-shine = 10
-distance = 20
-
-print(impact_on_vision(name, time, rest_time, shine, distance))
 

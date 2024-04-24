@@ -20,8 +20,14 @@ const App = () => {
 
     const handleApiResponse = (response) => {
         if (response.status === 200) {
-            setBlockContact(false);
-            setApiResponse(response);
+            response.json() // Convertendo a resposta para JSON
+                .then(data => {
+                    setBlockContact(false);
+                    setApiResponse(data);
+                })
+                .catch(error => {
+                    console.error("Erro ao processar resposta JSON:", error);
+                });
         } else {
             setBlockContact(true);
         }
@@ -47,21 +53,18 @@ const App = () => {
                 <p>Relacionado a comportamentos referente ao uso de telas que tendem causar impacto direto na visão.</p>
                 <br />
                 <br />
-                <h2>Confira abaixo seu "Score" e detalhes sobre sua pontuação:</h2>
-                <div id="result-card">
-                <div class="card-content">
-                    <div class="value">Seu Score:</div>
-                    <hr />
-                    <h2>
-                        90
-                    </h2>
-                    <div class="details">Detalhes sobre seu Score:</div>
-                    <hr />
-                    <p>
-                        Seu uso está alto o que pode resultar em problemas na sua saúde visual
-                    </p>
-                </div>
-            </div>
+                {apiResponse && (
+                    <div id="result-card">
+                        <div className="card-content">
+                            <div className="value">Seu Score:</div>
+                            <hr />
+                            <h2>{apiResponse.Score}</h2>
+                            <div className="details">Detalhes sobre seu Score:</div>
+                            <hr />
+                            <p>{apiResponse.Description}</p>
+                        </div>
+                    </div>
+                )}
             </section>
         </div>
     );
