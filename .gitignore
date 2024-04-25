@@ -7,6 +7,7 @@ teste.py
 *.so
 dados.db
 zcurrent
+config.env
 # Distribution / packaging
 .Python
 build/
