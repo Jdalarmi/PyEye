@@ -28,15 +28,16 @@ const itemVariants = {
 const Links = () => {
 
     const items = [
-        "GitHub",
-        "Linkedin",
-        "Pendencias Pro",
-        "Sobre"
+        {title: "Github", link: "https://github.com/Jdalarmi"},
+        {title: "Linkedin", link: "https://www.linkedin.com/in/jeferson-dalarmi/"},
+    ]
+    const links = [
+        "https://github.com/Jdalarmi",
     ]
     return <motion.div className="links" variants={variants}>
         {items.map(item=>(
-        <motion.a href={`#${item}`} key={item} variants={itemVariants} whileHover={{scale: 1.1}} whileTap={{scale:0.5}}>
-            {item}
+        <motion.a href={item.link} key={item.title} variants={itemVariants} whileHover={{scale: 1.1}} whileTap={{scale:0.5}}>
+            {item.title}
         </motion.a>
     ))}</motion.div>
 
