@@ -55,6 +55,8 @@ const Form = ({handleApiResponse}) => {
   return (
     <div className='formulario-container'>
       <div className='formulario-intro'>
+      <br />
+      <br />
         <h2>Bem-vindo ao Formulário de Saúde Ocular</h2>
         <hr />
         <br />
