@@ -1,4 +1,4 @@
-body{
+body {
   background-image: url("/stars_transparent.png");
   background-size: cover;
   background-position: bottom;
@@ -10,76 +10,87 @@ body{
 }
 
 .formulario-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.formulario-intro {
+  text-align: center;
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
   }
 
-  .formulario-intro {
-    text-align: center;
-    margin-bottom: 20px;
+  p {
+    font-size: 16px;
+    color: #ffffff;
+  }
+}
 
-    h2 {
-      font-size: 26px;
-      margin-bottom: 10px;
+.formulario-card {
+  border-radius: 20px;
+  box-shadow: 0 10px 10px rgb(47, 206, 218);
+  overflow: hidden;
+  transition: box-shadow 0.8s ease;
+
+  &:hover {
+    box-shadow: 0 16px 16px rgba(180, 32, 209, 0.438);
+  }
+
+  .form {
+    padding: 12px;
+
+    label {
+      margin-bottom: 0px;
+      font-weight: bold;
+      display: block;
     }
 
-    p {
+    input,
+    select {
+      width: calc(100% - 16px);
+      padding: 12px;
+      margin-top: 7px;
+      margin-bottom: 17px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
       font-size: 16px;
-      color: #ffffff;
     }
+
+    button {
+      font-size: 20px;
+      width: calc(100% - 16px);
+      padding: 10px;
+      background-color: #16aacf;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 1s ease;
+
+      &:hover {
+        background-color: #b426df;
+      }
+
+      &:disabled {
+        background-color: #16aacf;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 768px) {
+  .formulario-container {
+    max-width: 100%;
   }
 
   .formulario-card {
-    border-radius: 20px;
-    box-shadow: 0 10px 10px rgb(47, 206, 218);
-    overflow: hidden;
-    transition: box-shadow 0.8s ease;
-
-    &:hover {
-      box-shadow: 0 16px 16px rgba(180, 32, 209, 0.438);
-    }
-
-    .form {
-      padding: 20px;
-
-      label {
-        margin-bottom: 0px;
-        font-weight: bold;
-        display: block;
-      }
-
-      input,
-      select {
-        width: calc(100% - 16px);
-        padding: 12px;
-        margin-top: 7px;
-        margin-bottom: 17px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-        font-size: 16px;
-      }
-
-      button {
-        font-size: 20px;
-        width: calc(100% - 16px);
-        padding: 10px;
-        background-color: #16aacf;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 1s ease;
-
-        &:hover {
-          background-color: #b426df;
-        }
-        &:disabled {
-          background-color: #16aacf;
-          pointer-events: none;
-        }
-      }
-    }
+    margin: 0 10px;
   }
-
+}
