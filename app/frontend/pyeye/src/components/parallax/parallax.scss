@@ -61,10 +61,10 @@
         height: 100%;
         position: absolute;
         z-index: 1;
-        @include mobile {
-            background-size: contain;
-            background-repeat: no-repeat;
-          }
+        // @include mobile {
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+        //   }
     }
 
 }
