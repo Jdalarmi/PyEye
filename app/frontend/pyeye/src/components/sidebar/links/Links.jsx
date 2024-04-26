@@ -28,7 +28,7 @@ const itemVariants = {
 const Links = () => {
 
     const items = [
-        {title: "Github", link: "https://github.com/Jdalarmi"},
+        {title: "Github", link: "https://github.com/Jdalarmi/PyEye"},
         {title: "Linkedin", link: "https://www.linkedin.com/in/jeferson-dalarmi/"},
     ]
     const links = [
