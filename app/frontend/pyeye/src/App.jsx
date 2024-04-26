@@ -35,7 +35,7 @@ const App = () => {
 
     return (
         <div>
-            <Cursor/>
+            {/* <Cursor/> */}
             <section id="HomePage">
                 <Navbar/>
                 <Parallax/>
