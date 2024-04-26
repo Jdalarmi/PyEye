@@ -36,18 +36,19 @@ async def received(pyeye: Pyeye, db: Session = Depends(get_db)):
     if number:
         return JSONResponse(status_code=400, content={"Erro": "Nome contém numeros"})
 
+
+    score = impact_on_vision(pyeye.time_exposed, pyeye.rest_time,
+                             pyeye.shine_screen, pyeye.distance_screen)
     analytics = Analytics(
         user_name=pyeye.user_name,
         time_exposed = pyeye.time_exposed,
         rest_time = pyeye.rest_time,
         shine_screen = pyeye.shine_screen,
-        distance_screen = pyeye.distance_screen
+        distance_screen = pyeye.distance_screen,
+        score = score
     )
     db.add(analytics)
     db.commit()
-
-    score = impact_on_vision(pyeye.time_exposed, pyeye.rest_time,
-                             pyeye.shine_screen, pyeye.distance_screen)
 
     if score <= 50:
         return JSONResponse(status_code=200, content={"Score":score, "Description":"Parabéns pelo seu score. "
