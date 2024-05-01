@@ -27,9 +27,9 @@ A interface web foi construída utilizando a tecnologia React, proporcionando um
 
 ## ⏳ Executando o projeto
 O projeto está dockerizado, facilitando a configuração do ambiente. Para iniciar, basta executar o seguinte passos abaixo:
-1 - Certifique-se de ter o Docker instalado em sua máquina.
-2 - Abra o terminal ou prompt de comando na pasta raiz do projeto.
-3 - Execute o seguinte comando para iniciar o projeto
+- 1: Certifique-se de ter o Docker instalado em sua máquina.
+- 2: Abra o terminal ou prompt de comando na pasta raiz do projeto.
+- 3: Execute o seguinte comando para iniciar o projeto
 
 ```docker-compose up --build```
 
