@@ -16,7 +16,7 @@ Acesse agora mesmo e confira sua score: [http://www.pyeye.kozow.com/]
 
 Este projeto foi concebido com uma arquitetura de microserviços, visando uma estrutura modular e escalável. A conexão entre o frontend e o backend é estabelecida de forma eficiente, garantindo uma comunicação fluida e rápida.
 
-A interface web foi construída utilizando a tecnologia React, proporcionando uma experiência de usuário moderna e responsiva. Essa interface é responsável por enviar dados para a API, que por sua vez, foi desenvolvida com o framework FastAPI em Python.
+A interface web foi construída utilizando a tecnologia React, proporcionando uma experiência de usuário moderna e responsiva. Essa interface é responsável por enviar dados para a API, que por sua vez, foi desenvolvida com o framework FastAPI em Python usando arquitetura MVC.
 
 ### Tecnologias principais
 - React: Responsável pela construção da interface web, garantindo uma experiência de usuário moderna e interativa.
