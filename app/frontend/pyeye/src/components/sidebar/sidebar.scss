@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .sidebar{
     display: flex;
     flex-direction: column;
@@ -45,4 +47,8 @@
         cursor: pointer;
 
     }
+    @include mobile {
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
 }
