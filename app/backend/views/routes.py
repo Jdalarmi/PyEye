@@ -9,10 +9,10 @@ from controllers.analytics import impact_on_vision
 
 class Pyeye(BaseModel):
     user_name: str = Field(max_length=15)
-    time_exposed: int
-    rest_time: int
-    shine_screen: int
-    distance_screen: int
+    time_exposed: int = Field(ge=0, le=12)
+    rest_time: int = Field(ge=0, le=5)
+    shine_screen: int = Field(ge=0, le=100)
+    distance_screen: int = Field(ge=0, le=100)
 
 
 router = APIRouter(
@@ -31,11 +31,10 @@ def get_db():
 @router.post("/received/pyeye")
 async def received(pyeye: Pyeye, db: Session = Depends(get_db)):
     if pyeye.user_name == "":
-        return JSONResponse(status_code=400, content={"Erro": "Campo nome vazio"})
+        return JSONResponse(status_code=400, content={"message": "Campo nome vazio"})
     number = any(char.isdigit() for char in pyeye.user_name)
     if number:
-        return JSONResponse(status_code=400, content={"Erro": "Nome contém numeros"})
-
+        return JSONResponse(status_code=400, content={"message": "Nome contém numeros"})
 
     score = impact_on_vision(pyeye.time_exposed, pyeye.rest_time,
                              pyeye.shine_screen, pyeye.distance_screen)

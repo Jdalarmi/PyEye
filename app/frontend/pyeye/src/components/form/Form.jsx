@@ -22,7 +22,8 @@ const Form = ({handleApiResponse}) => {
     });
   };
 
-
+// http://127.0.0.1:8000/
+// http://34.238.154.232:8000/v1/received/pyeye
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch("http://34.238.154.232:8000/v1/received/pyeye", {
@@ -40,15 +41,29 @@ const Form = ({handleApiResponse}) => {
     })
     .then(response => {
       handleApiResponse(response);
-      if (response.status == 200){
-        setBotaoDesabilitado(true)
+      if (response.status === 200){
+        setBotaoDesabilitado(true);
+      } else if (response.status === 400) {
+        return response.json();
+      } else {
+        throw new Error('Erro na solicitação: Valor fora do permitido');
       }
-      return response.json();
     })
-    .then(data => console.log(data))
+    .then(data => {
+      if (data) {
+        setErrorMessage("Erro ao enviar os dados: " + data.message);
+
+        setTimeout(()=> {
+          setErrorMessage(null);
+        }, 5000);
+      }
+    })
     .catch((error) =>{
-      setErrorMessage("Erro ao enviar os dados:" + error.message)
-      console.error("Erro ao enviar dados:", error);
+      setErrorMessage("" + error.message);
+
+      setTimeout(()=> {
+        setErrorMessage(null);
+      }, 5000);
     });
   };
 
@@ -63,6 +78,7 @@ const Form = ({handleApiResponse}) => {
         <p>Preencha o formulário abaixo com suas informações para obter seu "Score".</p>
       </div>
       <div className='formulario-card'>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
         <form className="form" onSubmit={handleSubmit}>
           <label>
             Insira seu nome:
@@ -74,7 +90,7 @@ const Form = ({handleApiResponse}) => {
             />
           </label>
           <label>
-            Tempo de Exposição (Horas por dia em frente a tela):
+            Tempo de Exposição (Horas por dia em frente a tela de 1-12):
             <input
               type="number"
               name="tempo_exposicao"
@@ -83,7 +99,7 @@ const Form = ({handleApiResponse}) => {
             />
           </label>
           <label>
-            Intervalos de Descanso (Quantas pausas a cada 1 hora):
+            Intervalos de Descanso (Quantas pausas a cada 1 hora de 1-5):
             <input
               type="text"
               name="intervalos_descanso"
@@ -92,7 +108,7 @@ const Form = ({handleApiResponse}) => {
             />
           </label>
           <label>
-            Brilho da Tela (0-100):
+            Nvel de brilho da sua tela (0-100):
             <input
               type="number"
               name="brilho_tela"
@@ -101,7 +117,7 @@ const Form = ({handleApiResponse}) => {
             />
           </label>
           <label>
-            Distância de Visualização (centímetros):
+            Distância de Visualização (centímetros de 1-100):
             <input
               type="number"
               name="distancia_visualizacao"
