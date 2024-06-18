@@ -21,6 +21,17 @@ services:
     networks:
       - app-network
 
+  database:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
   nginx:
     image: nginx
     ports:
