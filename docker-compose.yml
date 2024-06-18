@@ -12,8 +12,14 @@ services:
       context: ./app/backend
     ports:
       - "8000:8000"
-    env_file:
-      - config.env
+    volumes:
+      - ./app:/app
+    environment:
+      - DATABASE_URL=postgresql://admin:admin@database:5432/postgres
+    depends_on:
+      - database
+    networks:
+      - app-network
 
   nginx:
     image: nginx
@@ -29,3 +35,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./ssl:/etc/letsencrypt
+
+networks:
+  app-network:
+    driver: bridge
