@@ -17,7 +17,9 @@ services:
     volumes:
       - ./app:/app
     environment:
-      - DATABASE_URL=postgresql://admin:admin@database:5432/postgres
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     depends_on:
       - database
     networks:
