@@ -6,6 +6,8 @@ services:
       context: ./app/frontend/pyeye
     ports:
       - "3000:3000"
+    networks:
+      - app-network
 
   backend:
     build:

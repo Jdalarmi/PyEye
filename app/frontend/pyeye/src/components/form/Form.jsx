@@ -26,7 +26,7 @@ const Form = ({handleApiResponse}) => {
 // http://34.238.154.232:8000/v1/received/pyeye
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://34.238.154.232:8000/v1/received/pyeye", {
+    fetch("http://24.199.74.168:8000/v1/received/pyeye", {
       method: 'POST',
       headers:{
         'Content-Type': 'application/json'
