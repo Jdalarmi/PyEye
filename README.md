@@ -15,6 +15,7 @@ Finalidade desse projeto é gerar um score que fornece detalhes sobre uso de tel
 
 
 <br/>
+
 ## 🔎 Status do Projeto
 
 Se você ainda não enviou seus dados para obter seu score o que esta esperando?
