@@ -5,10 +5,16 @@ Finalidade desse projeto é gerar um score que fornece detalhes sobre uso de tel
 
 <br/>
 
+## Analise de dados já coletados
+
+![Alt text](img1.png)
+
+
+<br/>
 ## 🔎 Status do Projeto
 
 Se você ainda não enviou seus dados para obter seu score o que esta esperando?
-Acesse agora mesmo e confira sua score: [http://www.pyeye.kozow.com/]
+Acesse agora mesmo e confira sua score: [https://pyeye.ddnsgeek.com/]
 
 <br/>
 
