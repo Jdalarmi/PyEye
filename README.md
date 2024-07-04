@@ -7,6 +7,10 @@ Finalidade desse projeto é gerar um score que fornece detalhes sobre uso de tel
 
 ## Analise de dados já coletados
 
+![Alt text](img/img4.png)
+
+![Alt text](img/img5.png)
+
 ![Alt text](img/img1.png)
 
 ![Alt text](img/img2.png)
