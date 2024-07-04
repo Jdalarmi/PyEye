@@ -9,6 +9,10 @@ Finalidade desse projeto é gerar um score que fornece detalhes sobre uso de tel
 
 ![Alt text](img/img1.png)
 
+![Alt text](img/img2.png)
+
+![Alt text](img/img3.png)
+
 
 <br/>
 ## 🔎 Status do Projeto
