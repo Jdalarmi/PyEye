@@ -6,12 +6,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-user=os.getenv('USER')
-password=os.getenv("PASSWORD")
-host=os.getenv("HOST")
-db=os.getenv("DB")
+data_base_url = os.getenv("DATABASE_URL")
 
-SQLALCHEMY_DATABASE_URL = 'postgresql://admin:admin@database:5432/postgres'
+SQLALCHEMY_DATABASE_URL = f'{data_base_url}'
 
 #SQLALCHEMY_DATABASE_URL = 'sqlite:///dados.db'
 
