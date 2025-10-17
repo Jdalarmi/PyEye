@@ -2,6 +2,7 @@
 # PyEye
 
 Finalidade desse projeto é gerar um score que fornece detalhes sobre uso de telas do usuario, enquanto coleta dados que serão usados para futuras análises preditivas de comportamento em frente a telas.
+Foi usado no TCC no final do curso de desenvolvimento de sistemas.
 
 <br/>
 
@@ -17,13 +18,6 @@ Finalidade desse projeto é gerar um score que fornece detalhes sobre uso de tel
 
 ![Alt text](img/img3.png)
 
-
-<br/>
-
-## 🔎 Status do Projeto
-
-Se você ainda não enviou seus dados para obter seu score o que esta esperando?
-Acesse agora mesmo e confira sua score: [https://pyeye.ddnsgeek.com/]
 
 <br/>
 
